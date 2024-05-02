@@ -24,7 +24,7 @@ public class PaymentDispatcherFunctions {
 
         return cardFlux ->
                 paymentSerivce.addCreditCard(cardFlux)
-                        .doOnNext(card -> log.info("Card com Identificador: {} foi despachado.", card.paymentId()))
+                        .doOnNext(card -> log.info("Card: {} ", card.toString()))
                         .onErrorResume(throwable -> {
                             log.error("Erro ao processar cartão: {}", throwable.getMessage());
                             return Mono.empty();

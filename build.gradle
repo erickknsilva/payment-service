@@ -66,9 +66,8 @@ bootBuildImage {
             url = project.findProperty("registryUrl")
         }
     }
+}
 
-    tasks.named('test') {
-        useJUnitPlatform()
-    }
-
+tasks.named('test') {
+    useJUnitPlatform()
 }
